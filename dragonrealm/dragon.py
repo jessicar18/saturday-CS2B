@@ -6,7 +6,7 @@
 import random
 import time
 
-# Global Variables
+# Global variables
 score = 0
 
 # Show Introduction
