@@ -54,8 +54,8 @@ def play():
         choice = input()
         if choice == "q":
             stillPlaying = False
-        print("Your score: " + str(score))
-        print("Goodbye! Thanks for playin', naaamean?")
+    print("Your score: " + str(score))
+    print("Goodbye! Thanks for playin', naaamean?")
 
 # Play the game!
 play()
