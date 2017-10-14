@@ -22,9 +22,38 @@ def choose_cave():
         cave = input()
     return cave
 
-show_intro()
-choose_cave()
+
+def check_cave(cave_chosen):
+    print("You approach the cave slowly...")
+    time.sleep(2)
+    print("Smells like dragon farts...")
+    time.sleep(2)
+    print("A big ol' DRAGON jumps out in front of you and opens its jaws and...")
+    print()
+    time.sleep(2)
+
+    friendly_dragon = random.randint(1, 2)
+
+    if cave_chosen == str(friendly_dragon):
+        print("Gives you his treasure!")
+    else:
+        print("He farts on you.")
 
 
+def play():
+    stillPlaying = True
+    while stillPlaying:
+        show_intro()
+        cave = choose_cave()
+        check_cave(cave)
+        print("Would you like to play again? (y to continue, q to quit)")
+        choice = input()
+        if choice == "q":
+            stillPlaying = False
+        print("Your score: ")
+        print("Goodbye! Thanks for playin', naaamean?")
+
+# Play the game!
+play()
 
 
