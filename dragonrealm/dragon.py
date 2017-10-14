@@ -6,6 +6,9 @@
 import random
 import time
 
+# Global Variables
+score = 0
+
 # Show Introduction
 def show_intro():
     print('''You are in a land full of dragons. In front of you,
@@ -24,6 +27,7 @@ def choose_cave():
 
 
 def check_cave(cave_chosen):
+    global score
     print("You approach the cave slowly...")
     time.sleep(2)
     print("Smells like dragon farts...")
@@ -31,14 +35,14 @@ def check_cave(cave_chosen):
     print("A big ol' DRAGON jumps out in front of you and opens its jaws and...")
     print()
     time.sleep(2)
-
     friendly_dragon = random.randint(1, 2)
-
     if cave_chosen == str(friendly_dragon):
         print("Gives you his treasure!")
+        score += 1
     else:
         print("He farts on you.")
-
+        if score >= 1:
+            score -= 1
 
 def play():
     stillPlaying = True
@@ -50,7 +54,7 @@ def play():
         choice = input()
         if choice == "q":
             stillPlaying = False
-        print("Your score: ")
+        print("Your score: " + str(score))
         print("Goodbye! Thanks for playin', naaamean?")
 
 # Play the game!
